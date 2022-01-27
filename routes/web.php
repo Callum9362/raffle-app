@@ -1,0 +1,29 @@
+<?php
+
+use App\Http\Controllers\EntryController;
+use App\Http\Controllers\WinnersController;
+use App\Http\Controllers\IndexController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
+//Home routes
+Route::get('/', [IndexController::class, 'index'])->name('home');
+
+// Add entrant routes
+Route::get('/add-user', [EntryController::class, 'index'])->name('add-form');
+Route::post('/add', [EntryController::class, 'store'])->name('add-entrant');
+
+// Allocate winner routes
+Route::get('/winners', [WinnersController::class, 'index'])->name('get-winners');
+Route::post('/winners', [WinnersController::class, 'action'])->name('assign-winners');
