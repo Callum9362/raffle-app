@@ -29,7 +29,7 @@
                     <div class="form-group mt-2">
                         <labe>Number of Winners</label>
                             <input type="telephone" class="form-control" name="winners" placeholder="Number of winners">
-                            @error('telephone')
+                            @error('winners')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
